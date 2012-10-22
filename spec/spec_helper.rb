@@ -8,5 +8,16 @@ require 'money'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 RSpec.configure do |config|
-  
+  config.alias_it_should_behave_like_to :it_has_behavior, 'has behavior:'
+end
+
+shared_context 'actual subject', subject: :present?.to_proc do
+  subject { send(example.metadata[:subject]) }
+end
+
+shared_context 'method setup from metadata', method: :present?.to_proc do
+  let(:recipient) { subject }
+  let(:method) { example.metadata[:method] }
+  let(:args) { [] }
+  let(:action) { lambda { recipient.send(*[method, *args]) } }
 end

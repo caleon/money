@@ -17,8 +17,24 @@ Jeweler::Tasks.new do |gem|
   gem.name = "money"
   gem.homepage = "http://github.com/caleon/money"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Ruby class for representing Money with currencies for use with Rails and ActiveRecord}
+  gem.description = <<-DESC
+    This is a representation of Money (and various arbitrary currencies),
+    created with usage within the Rails framework in mind, although it can
+    stand alone as long as you are okay with including ActiveModel for
+    validations and a few ActiveSupport helpers (although those can be handled
+    differently if there is enough desire to decouple this from those
+    dependencies).
+
+    Its greatest utility will come when used with ActiveRecord objects
+    stored as database rows, where combined with ActiveRecord's `composed_of`
+    statement, you are able to separate the tedious money-related logic
+    within your classes which utilize the abstraction.
+
+    Out of convenience, this is written for Ruby 1.9, although there shouldn't
+    be many changes required ot make this 1.8 compatible. RCov is not listed
+    as a dependency since 1.9 setups should use simplecov instead.
+  DESC
   gem.email = "caleon@gmail.com"
   gem.authors = ["caleon"]
   # dependencies defined in Gemfile
