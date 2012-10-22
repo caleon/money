@@ -1,9 +1,24 @@
-= money
+= Money
 
-Description goes here.
+This is a representation of Money (and various arbitrary currencies), created with usage within the Rails framework in mind, although it can stand alone as long as you are okay with including ActiveModel for validations and a few ActiveSupport helpers (although those can be handled differently if there is enough desire to decouple this from those dependencies).
+
+Its greatest utility will come when used with ActiveRecord objects stored as database rows, where combined with ActiveRecord's `composed_of` statement, you are able to separate the tedious money-related logic within your classes which utilize the abstraction.
+
+Out of convenience, this is written for Ruby 1.9, although there shouldn't be many changes required ot make this 1.8 compatible. RCov is not listed as a dependency since 1.9 setups should use simplecov instead.
+
+== Usage
+
+    # Put the following in your Gemfile:
+    gem 'money', github: 'caleon/money'
+
+== Roadmap
+
+* JavaScript library for hooking into the Money behaviors in the frontend for Internationalization (needs to be ported)
+* Rails-ready class methods for models to conveniently set up the composed_of calls
+* Customizable formatting rules per currency
 
 == Contributing to money
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
