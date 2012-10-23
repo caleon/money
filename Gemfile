@@ -13,5 +13,5 @@ group :development do
   # gem "rcov", ">= 0"
   gem 'activemodel',    '>= 3.1.0'
   gem 'activesupport',  '>= 3.1.0'
-  gem 'significance', '~> 0.1.4', github: 'caleon/significance'
+  gem 'significance', '~> 0.2.0'
 end
